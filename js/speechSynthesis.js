@@ -7,6 +7,9 @@ Complexity:
   1. 2n for building the hash map and sentences index (done once) where n is number of words in the recording
   2. 1 + c for matching phrases with given word where c is the context length
 
+Extra credit:
+  Handles duplicates words in the recording, and outputs matching phrases. Example: 'the', 'of' in the sample data below
+
 Sample recording_data:
   [['backwaters',3,11],['end',22,13],['sun.',12,-1],['uncharted',8,0],['small',16,18],['arm',23,15],['Galaxy',17,10],['Far',-1,14],['the',9,3],['in',14,8],['lies',6,16],['of',0,17],['yellow',18,2],['of',1,19],['out',7,9],['of',5,20],['a',10,4],['the',11,22],['unregarded',4,12],['the',13,21],['the',15,6],['western',19,23],['unfashionable',17,1],['spiral',21,5]]
 
@@ -18,7 +21,6 @@ Usage:
   console.log(speechSynthesis.findWordInRecording(recording_data, 'the', 3));
   console.log(speechSynthesis.findWordInRecording(recording_data, 'Galaxy', 3));
 */
-
 
 'use strict';
 
@@ -41,7 +43,6 @@ let SpeechSynthesis = class {
 
     return phrases;
   }
-
 
   // Builds hash map from recording data and sentences with words in correct order
   buildWordsMapAndSentences(recordingData) {
@@ -73,7 +74,6 @@ let SpeechSynthesis = class {
     }
   }
 
-
   // Gets index of the first word of the sentence(s) from recording data
   getIndexOfFirstWord() {
     let indexFirstWord = -1;
@@ -88,12 +88,10 @@ let SpeechSynthesis = class {
     return indexFirstWord;
   }
 
-
   // (For UI)
   getSentences() {
     return this.sentences;
   }
-
 
   // Validates if given word is present in recording data, and if context length is greater than zero
   isValidInputParams(context, word) {
