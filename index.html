@@ -1,0 +1,70 @@
+
+<!doctype html>
+
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>Speech Synthesis</title>
+  <link href="https://fonts.googleapis.com/css?family=PT+Sans:400|Varela+Round|Muli:400" rel="stylesheet">
+  <link rel="stylesheet" href="css/main.css">
+</head>
+
+<body>
+  <div class="flex-container">
+    <div class="flex-item">
+      <div class="flex-item-content">
+        <div class="graphic">
+          <div class="title">
+            Speech<br>Synthesis
+          </div>
+        </div>
+        <div class="recording-content">
+          <form id="input-form">
+            <label for="recording-data" class="lbl">Enter list of words in the recording with their previous and next word indices: </label>
+            <textarea name="recording-data" class="recording-data" cols="30" rows="10">
+[['backwaters',3,11],['end',22,13],['sun.',12,-1],['uncharted',8,0],['small',16,18],['arm',23,15],['Galaxy',17,10],['Far',-1,14],['the',9,3],['in',14,8],['lies',6,16],['of',0,17],['yellow',18,2],['of',1,19],['out',7,9],['of',5,20],['a',10,4],['the',11,22],['unregarded',4,12],['the',13,21],['the',15,6],['western',19,23],['unfashionable',17,1],['spiral',21,5]]
+            </textarea>
+            <div class="buttons">
+              <input class="btn-clear" type="button" value="Clear">
+              <input class="btn-process" type="button" value="Process">
+            </div>
+            <div class="error">
+              ✖ &nbsp; Error: Input recording data is empty or invalid
+            </div>
+          </form>
+
+          <div id="output">
+            <div class="recording">
+              <span class="lbl">Recording with words in correct order:</span>
+              <blockquote></blockquote>
+            </div>
+            <div class="results">
+              <span class="lbl">Click on a word below from recording data, and choose a context length</span>
+              <select name="context-length" class="context-length">
+                <option value="1">1</option>
+                <option value="2" selected="selected">2</option>
+                <option value="3">3</option>
+                <option value="4">4</option>
+                <option value="5">5</option>
+                <option value="6">6</option>
+              </select>
+              <span class="lbl">to view matching phrase(s) with context words:</span>
+            </div>
+            <ul name="list-words" class="list-words"></ul>
+            <div class="phrases-box">
+              <span class="lbl">Phrase(s) with context words:</span>
+              <ol class="phrases"></ol>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </div>
+
+  <script src="js/speechSynthesis.js"></script>
+  <script src="js/ui.js"></script>
+  <script src="js/app.js"></script>
+</body>
+
+</html>

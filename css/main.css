@@ -1,0 +1,223 @@
+html {
+  box-sizing: border-box;
+}
+
+*, *:before, *:after {
+  box-sizing: inherit;
+}
+
+html, body {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  width: 100%;
+}
+
+.flex-container {
+  align-content: stretch;
+  align-items: stretch;
+  background: #bdcbd0;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  justify-content: flex-start;
+  width: 100%;
+}
+
+.flex-item {
+  align-content: stretch;
+  align-items: stretch;
+  display: flex;
+  flex-direction: row;
+  flex: 1;
+  justify-content: flex-start;
+  padding: 3%;
+}
+
+.flex-item-content {
+  background: #fff;
+  flex: 1;
+  overflow: auto;
+}
+
+.graphic {
+  background: #0b2b40 url(../images/sound.svg) no-repeat center 65%;
+  background-size: 130%;
+  float: left;
+  height: 100%;
+  overflow: hidden;
+  text-align: center;
+  width: 30%;
+}
+
+.graphic .title {
+  color: #fff;
+  font-family: 'Varela Round', sans-serif;
+  font-size: 3em;
+  height: 100%;
+  letter-spacing: 0.025em;
+  line-height: 1.5em;
+  position: relative;
+  top: 75%;
+}
+
+.recording-content {
+  font-family: 'Muli', sans-serif;
+  float: right;
+  height: 100%;
+  letter-spacing: 0.2px;
+  padding: 6% 10%;
+  overflow-x: hidden;
+  width: 70%;
+}
+
+#input-form label {
+  display: block;
+}
+
+#input-form .lbl, #output .lbl {
+  color: #a0a0a0;
+  font-size: 1.1em;
+  padding: 15px 0;
+  width: 90%;
+}
+
+#input-form textarea {
+  border: 1px solid #aaa;
+  color: #444;
+  display: block;
+  font-family: monospace;
+  font-size: 1em;
+  width: 90%;
+}
+
+#input-form .buttons {
+  margin-top: 15px;
+  text-align: center;
+  width: 90%;
+}
+
+#input-form .buttons input[type="button"] {
+  background-color: #145179;
+  border: 0;
+  border-radius: 20px;
+  color: #fff;
+  cursor: pointer;
+  font-family: 'Muli', sans-serif;
+  font-size: 1.2em;
+  letter-spacing: 0.2px;
+  margin: 0 10px;
+  outline: none;
+  padding: 8px 20px;
+}
+
+#input-form .buttons input[type="button"]:hover {
+  background-color: #0b2b40;
+}
+
+#input-form .error {
+  background-color: #FFD2D2;
+  border-radius: 30px;
+  color: #D8000C;
+  display: none;
+  margin: 2em 0;
+  padding: 12px 20px;
+  text-align: center;
+  width: 90%;
+}
+
+#output {
+  display: none;
+}
+
+.results {
+  padding-top: 3em;
+}
+
+.list-words {
+  list-style-type: none;
+  margin: 2.5em 0 5px 0;
+  padding: 0;
+  overflow: auto;
+  width: 90%;
+}
+
+.list-words li {
+  border: 1px solid #bdcbd0;
+  border-radius: 20px;
+  cursor: pointer;
+  float: left;
+  margin-bottom: 10px;
+  margin-right: 10px;
+  padding: 3px 10px;
+}
+
+.list-words li.selected {
+  background-color: #d1e2e8;
+}
+
+.phrases-box {
+  clear: both;
+  display: none;
+  margin-top: 3em;
+}
+
+.phrases-box li {
+  margin-bottom: 1em;
+}
+
+.phrases .hi-lite {
+  border-bottom: 2px solid #bdcbd0;
+  color: #145179;
+  font-family: 'Georgia', serif;
+  padding: 0 2px 2px 2px;
+  font-style: italic;
+}
+
+.recording {
+  clear: both;
+  margin-top: 4em;
+}
+
+@media only screen and (max-width: 768px) {
+  .graphic .title {
+    font-size: 1.5em;
+  }
+
+  .phrases {
+    padding-left: 0;
+  }
+}
+
+/* Below CSS snippet is from https://codepen.io/harmputman/pen/IpAnb */
+blockquote {
+  border-color: #ccc;
+  border-style: dotted;
+  border-width: 1px 0;
+  display: block;
+  line-height: 1.6em;
+  margin: 1em 0;
+  padding: 1.5em 0;
+  position: relative;
+}
+
+blockquote:before {
+  background: #fff;
+  color: #bdcbd0;
+  content: '\201C';
+  font: 6em/1.08em 'PT Sans', sans-serif;
+  height: 2rem;
+  left: 50%;
+  position: absolute;
+  text-align: center;
+  top: 0em;
+  transform: translate(-50%, -50%);
+  width: 3rem;
+}
+
+blockquote:after {
+  color: #e74c3c;
+  display: block;
+  font-size: 0.875em;
+  text-align: right;
+}
