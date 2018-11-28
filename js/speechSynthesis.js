@@ -10,7 +10,7 @@ Complexity:
 Extra credit:
   Handles duplicates words in the recording, and outputs matching phrases. Example: 'the', 'of' in the sample data below
 
-Sample recording_data:
+Sample recording_data (from HitchHiker's Guide to the Galaxy Intro):
   [['backwaters',3,11],['end',22,13],['sun.',12,-1],['uncharted',8,0],['small',16,18],['arm',23,15],['Galaxy',17,10],['Far',-1,14],['the',9,3],['in',14,8],['lies',6,16],['of',0,17],['yellow',18,2],['of',1,19],['out',7,9],['of',5,20],['a',10,4],['the',11,22],['unregarded',4,12],['the',13,21],['the',15,6],['western',19,23],['unfashionable',17,1],['spiral',21,5]]
 
 Words arranged in correct order for above data:
@@ -107,7 +107,6 @@ let SpeechSynthesis = class {
 
     return true;
   }
-
 
   // Validates if recording data follows specific format ([[<word>, <prev-index>, <next-index>], [<word> ...]])
   isValidRecordingData() {
