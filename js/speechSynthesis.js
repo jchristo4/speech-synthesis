@@ -5,7 +5,7 @@ From the recording, a hash map of words and their indices in the recording (in c
 
 Complexity:
   1. 2n for building the hash map and sentences index (done once) where n is number of words in the recording
-  2. 1 + c for matching phrases with given word where c is the context length
+  2. 1 + c for fetching phrases for a given word with context words where c is the context length
 
 Extra credit:
   Handles duplicates words in the recording, and outputs matching phrases. Example: 'the', 'of' in the sample data below
